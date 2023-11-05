@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:checked="true"
+        android:icon="@drawable/home_tookhali"
+        android:id="@+id/item_home"
+        android:title="Home"
+        android:checkable="true"/>
+    <item
+        android:icon="@drawable/register"
+        android:id="@+id/item_register"
+        android:title="Sign Up" />
+
+    <item
+        android:icon="@drawable/profile_tookhali"
+        android:id="@+id/item_profile"
+        android:title="Profile" />
+
+
+
+
+
+</menu>
