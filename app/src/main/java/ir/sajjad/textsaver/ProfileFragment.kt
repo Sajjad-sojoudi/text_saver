@@ -19,8 +19,6 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.lottieAnimationView.playAnimation()
-        binding.lottieAnimationView.repeatCount = 1000000000
 
     }
 
