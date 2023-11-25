@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RegisterFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,142 +11,152 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <ImageView
-                    app:tint="@color/red"
-                    android:layout_marginTop="4dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/profile_tookhali"
                     android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/profile_tookhali"
+                    app:tint="@color/red" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="25dp"
-                    android:hint="Enter your name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:hint="Enter your name">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <ImageView
-                    app:tint="@color/red"
-                    android:layout_marginTop="4dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_birthday"
                     android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/ic_birthday"
+                    app:tint="@color/red" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    app:helperTextEnabled="true"
-                    app:helperText="*شکل درست : 1382/12/02 "
-                    app:helperTextTextColor="@color/red"
+                    android:id="@+id/edtBirthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="25dp"
                     android:hint="Enter your Birthday"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    app:helperText="*شکل درست : 1382/12/02 "
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/red">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:inputType="date"
+
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:inputType="date" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <ImageView
-                    app:tint="@color/red"
-                    android:layout_marginTop="4dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_mobile"
                     android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/ic_mobile"
+                    app:tint="@color/red" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/edtNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="25dp"
-                    android:hint="Enter your number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:hint="Enter your number">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:inputType="number"
+
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <ImageView
-                    app:tint="@color/red"
-                    android:layout_marginTop="4dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_instagram"
                     android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/ic_instagram"
+                    app:tint="@color/red" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtInstagramId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="25dp"
-                    android:hint="Enter your Instagrma ID"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:hint="Enter your Instagrma ID">
 
                     <com.google.android.material.textfield.TextInputEditText
+
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -157,67 +167,69 @@
                     app:tint="@color/red" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="25dp"
-                    android:hint="Enter your name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:hint="Enter your email">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <ImageView
-                    app:tint="@color/red"
-                    android:layout_marginTop="4dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_password"
                     android:layout_width="25sp"
-                    android:layout_height="25sp"/>
+                    android:layout_height="25sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/ic_password"
+                    app:tint="@color/red" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/edtPassword"
-                    app:endIconTint="@color/red"
-                    app:endIconMode="password_toggle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="13dp"
                     android:layout_marginEnd="25dp"
-                    android:hint="Enter your name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:hint="Enter your password"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/red">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:inputType="textPassword"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
             <soup.neumorphism.NeumorphButton
-                android:textSize="22sp"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:text="Sign up"
+                android:id="@+id/btnSubmit"
                 android:layout_width="180dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Sign up"
+                android:textColor="@color/white"
+                android:textSize="22sp"
                 app:neumorph_backgroundColor="#ef3c52"
                 app:neumorph_shadowColorDark="#cb3346"
                 app:neumorph_shadowColorLight="#ff455e"
-                app:neumorph_shadowElevation="4dp"/>
-
+                app:neumorph_shadowElevation="4dp" />
 
 
         </LinearLayout>

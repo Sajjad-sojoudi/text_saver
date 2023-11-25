@@ -1,5 +1,7 @@
 package ir.sajjad.textsaver
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -41,6 +43,39 @@ class RegisterFragment : Fragment() {
                 binding.edtPassword.error = null
             }
         }
+
+        val sharedPreferencesFileName = "data"
+        val sharedPreferences = requireActivity().getSharedPreferences(sharedPreferencesFileName, Context.MODE_PRIVATE)
+
+        binding.btnSubmit.setOnClickListener {
+
+            val name = binding.edtName.editText!!.text.toString()
+            sharedPreferences.edit().putString("name",name).apply()
+
+            val birthday = binding.edtBirthday.editText!!.text.toString()
+            sharedPreferences.edit().putString("birthday",birthday).apply()
+
+            val phoneNumber = binding.edtNumber.editText!!.text.toString()
+            sharedPreferences.edit().putString("phoneNumber",phoneNumber).apply()
+
+            val instagram = binding.edtInstagramId.editText!!.text.toString()
+            sharedPreferences.edit().putString("instagram",instagram).apply()
+
+            val email = binding.edtEmail.editText!!.text.toString()
+            sharedPreferences.edit().putString("email",email).apply()
+
+            val password = binding.edtPassword.editText!!.text.toString()
+            sharedPreferences.edit().putString("password",password).apply()
+
+            binding.edtName.editText!!.text = null
+            binding.edtBirthday.editText!!.text = null
+            binding.edtNumber.editText!!.text = null
+            binding.edtInstagramId.editText!!.text = null
+            binding.edtEmail.editText!!.text = null
+            binding.edtPassword.editText!!.text = null
+        }
+
+
 
     }
 
