@@ -27,9 +27,10 @@
                 app:tint="@color/red" />
 
             <TextView
+                android:id="@+id/txtTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="sajjad sojoudi"
+                android:text="N/A"
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 app:layout_constraintBottom_toTopOf="@+id/button"
@@ -82,11 +83,12 @@
                         app:tint="@color/red" />
 
                     <TextView
+                        android:id="@+id/txtName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="Sajjad Sojoudi"
+                        android:text="N/A"
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
@@ -113,11 +115,12 @@
                         app:tint="@color/red" />
 
                     <TextView
+                        android:id="@+id/txtBirthday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="Birthday"
+                        android:text="N/A"
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
@@ -144,11 +147,12 @@
                         app:tint="@color/red" />
 
                     <TextView
+                        android:id="@+id/txtPhoneNumber"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="+98 935 105 2117"
+                        android:text="N/A"
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
@@ -175,11 +179,12 @@
                         app:tint="@color/red" />
 
                     <TextView
+                        android:id="@+id/txtInstagram"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="sajjad_sojoudi"
+                        android:text="N/A"
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
@@ -206,11 +211,12 @@
                         app:tint="@color/red" />
 
                     <TextView
+                        android:id="@+id/txtEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="s@gmail.com"
+                        android:text="N/A"
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
@@ -237,17 +243,19 @@
                         app:tint="@color/red" />
 
                     <TextView
+                        android:id="@+id/txtPassword"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="Password"
+                        android:text="N/A"
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
                 </LinearLayout>
 
                 <soup.neumorphism.NeumorphButton
+                    android:id="@+id/btnEdit"
                     android:layout_width="180dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"

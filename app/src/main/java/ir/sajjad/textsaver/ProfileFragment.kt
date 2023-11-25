@@ -1,5 +1,6 @@
 package ir.sajjad.textsaver
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +19,23 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val sharedPreferencesFileName = "data"
+        val sharedPreferences = requireActivity().getSharedPreferences(sharedPreferencesFileName, Context.MODE_PRIVATE)
+
+        val name = sharedPreferences.getString("name", "")
+        val birthday = sharedPreferences.getString("birthday", "")
+        val phoneNumber = sharedPreferences.getString("phoneNumber", "")
+        val instagram = sharedPreferences.getString("instagram", "")
+        val email = sharedPreferences.getString("email", "")
+        val password = sharedPreferences.getString("password", "")
+
+        binding.txtTitle.text = name
+        binding.txtName.text = name
+        binding.txtBirthday.text = birthday
+        binding.txtPhoneNumber.text = phoneNumber
+        binding.txtInstagram.text = instagram
+        binding.txtEmail.text = email
+        binding.txtPassword.text = password
 
 
     }
