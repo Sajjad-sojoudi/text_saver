@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
-            val navController = findNavController(R.id.fragmentContainerView) // R.id.nav_host_fragment باید با ID فرگمنت میزبان شما جایگزین شود
+            val navController = findNavController(R.id.fragmentContainerView)
 
             when (item.itemId) {
                 R.id.item_home -> {
@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+
+
 
 
 
