@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import ir.sajjad.textsaver.databinding.DialogEditDataBinding
 import ir.sajjad.textsaver.databinding.FragmentProfileBinding
 
@@ -88,6 +89,8 @@ class ProfileFragment : Fragment() {
             binding.txtPassword.text = dialogBinding.dialogEdtPassword.editText!!.text.toString()
 
             dialog.dismiss()
+
+            Toast.makeText(context, "اطلاعات با موفقیت تغییر یافت", Toast.LENGTH_SHORT).show()
         }
 
         dialogBinding.btnCancel.setOnClickListener {
