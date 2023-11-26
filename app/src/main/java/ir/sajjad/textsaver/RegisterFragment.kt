@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import ir.sajjad.textsaver.databinding.FragmentRegisterBinding
 
@@ -49,23 +50,36 @@ class RegisterFragment : Fragment() {
 
         binding.btnSubmit.setOnClickListener {
 
-            val name = binding.edtName.editText!!.text.toString()
-            sharedPreferences.edit().putString("name",name).apply()
+            if (binding.edtName.editText!!.text.isEmpty() &&
+                binding.edtBirthday.editText!!.text.isEmpty() &&
+                binding.edtNumber.editText!!.text.isEmpty() &&
+                binding.edtInstagramId.editText!!.text.isEmpty() &&
+                binding.edtEmail.editText!!.text.isEmpty() &&
+                binding.edtPassword.editText!!.text.isEmpty()
+                ){
 
-            val birthday = binding.edtBirthday.editText!!.text.toString()
-            sharedPreferences.edit().putString("birthday",birthday).apply()
+                Toast.makeText(context, "لطفا همه مقادیر رو پر کنید", Toast.LENGTH_SHORT).show()
 
-            val phoneNumber = binding.edtNumber.editText!!.text.toString()
-            sharedPreferences.edit().putString("phoneNumber",phoneNumber).apply()
+            }else{
 
-            val instagram = binding.edtInstagramId.editText!!.text.toString()
-            sharedPreferences.edit().putString("instagram",instagram).apply()
+                val name = binding.edtName.editText!!.text.toString()
+                sharedPreferences.edit().putString("name",name).apply()
 
-            val email = binding.edtEmail.editText!!.text.toString()
-            sharedPreferences.edit().putString("email",email).apply()
+                val birthday = binding.edtBirthday.editText!!.text.toString()
+                sharedPreferences.edit().putString("birthday",birthday).apply()
 
-            val password = binding.edtPassword.editText!!.text.toString()
-            sharedPreferences.edit().putString("password",password).apply()
+                val phoneNumber = binding.edtNumber.editText!!.text.toString()
+                sharedPreferences.edit().putString("phoneNumber",phoneNumber).apply()
+
+                val instagram = binding.edtInstagramId.editText!!.text.toString()
+                sharedPreferences.edit().putString("instagram",instagram).apply()
+
+                val email = binding.edtEmail.editText!!.text.toString()
+                sharedPreferences.edit().putString("email",email).apply()
+
+                val password = binding.edtPassword.editText!!.text.toString()
+                sharedPreferences.edit().putString("password",password).apply()
+            }
 
             binding.edtName.editText!!.text = null
             binding.edtBirthday.editText!!.text = null
