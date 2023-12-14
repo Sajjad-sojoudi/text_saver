@@ -7,13 +7,14 @@ import androidx.navigation.findNavController
 import ir.sajjad.textsaver.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             val navController = findNavController(R.id.fragmentContainerView)
@@ -29,13 +30,8 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.profileFragment)
                 }
             }
-
             true
         }
-
-
-
-
 
 
     }

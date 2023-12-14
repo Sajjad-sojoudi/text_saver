@@ -1,4 +1,4 @@
-package ir.sajjad.textsaver
+package ir.sajjad.textsaver.fragment
 
 import android.app.AlertDialog
 import android.content.Context
@@ -16,17 +16,14 @@ class ProfileFragment : Fragment() {
     lateinit var binding: FragmentProfileBinding
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?, ): View? {
         binding = FragmentProfileBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val sharedPreferencesFileName = "data"
         val sharedPreferences =
             requireActivity().getSharedPreferences(sharedPreferencesFileName, Context.MODE_PRIVATE)
@@ -45,6 +42,8 @@ class ProfileFragment : Fragment() {
         binding.txtInstagram.text = instagram
         binding.txtEmail.text = email
         binding.txtPassword.text = password
+
+
 
         binding.btnEdit.setOnClickListener {
             showEditDialog()

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    tools:context=".fragment.ProfileFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -75,6 +75,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/img_profile"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_gravity="center"
@@ -88,13 +89,14 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="N/A"
+                        android:text=""
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
                 </LinearLayout>
 
                 <View
+                    android:id="@+id/view1"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="16dp"
@@ -107,6 +109,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/img_calender"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
@@ -120,13 +123,14 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="N/A"
+                        android:text=""
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
                 </LinearLayout>
 
                 <View
+                    android:id="@+id/view2"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="16dp"
@@ -139,6 +143,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/img_phone"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
@@ -152,13 +157,14 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="N/A"
+                        android:text=""
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
                 </LinearLayout>
 
                 <View
+                    android:id="@+id/view3"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="16dp"
@@ -171,6 +177,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/img_instagram"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
@@ -184,13 +191,14 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="N/A"
+                        android:text=""
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
                 </LinearLayout>
 
                 <View
+                    android:id="@+id/view4"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="16dp"
@@ -203,6 +211,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/img_email"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
@@ -216,13 +225,14 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="N/A"
+                        android:text=""
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 
                 </LinearLayout>
 
                 <View
+                    android:id="@+id/view5"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="16dp"
@@ -235,6 +245,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/img_password"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_gravity="center"
@@ -248,7 +259,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="48dp"
-                        android:text="N/A"
+                        android:text=""
                         android:textColor="@color/gray_text"
                         android:textSize="18sp" />
 

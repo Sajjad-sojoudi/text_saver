@@ -1,7 +1,6 @@
-package ir.sajjad.textsaver
+package ir.sajjad.textsaver.fragment
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.navigation.fragment.findNavController
+import ir.sajjad.textsaver.R
 import ir.sajjad.textsaver.databinding.FragmentRegisterBinding
 
 
@@ -28,6 +29,7 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         binding.edtNumber.editText!!.addTextChangedListener {
             if (it!!.length == 11) {
@@ -79,14 +81,13 @@ class RegisterFragment : Fragment() {
 
                 val password = binding.edtPassword.editText!!.text.toString()
                 sharedPreferences.edit().putString("password",password).apply()
+
+                val navController = findNavController()
+                navController.navigate(R.id.profileFragment)
+
             }
 
-            binding.edtName.editText!!.text = null
-            binding.edtBirthday.editText!!.text = null
-            binding.edtNumber.editText!!.text = null
-            binding.edtInstagramId.editText!!.text = null
-            binding.edtEmail.editText!!.text = null
-            binding.edtPassword.editText!!.text = null
+
         }
 
 
