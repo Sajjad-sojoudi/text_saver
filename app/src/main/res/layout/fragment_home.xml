@@ -32,8 +32,7 @@
           app:elevation="6dp"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
-          app:pressedTranslationZ="12dp"
-          app:srcCompat="@drawable/register" />
+          app:pressedTranslationZ="12dp" />
 
    </androidx.constraintlayout.widget.ConstraintLayout>
 
