@@ -17,8 +17,11 @@
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_editFragment"
-            app:destination="@id/editFragment" />
+            android:id="@+id/action_homeFragment_to_addTextFragment"
+            app:destination="@id/addTextFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_showTextFragment"
+            app:destination="@id/showTextFragment" />
 
     </fragment>
     <fragment
@@ -46,12 +49,21 @@
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/editFragment"
-        android:name="ir.sajjad.textsaver.fragment.EditFragment"
-        android:label="fragment_edit"
-        tools:layout="@layout/fragment_edit" >
+        android:id="@+id/addTextFragment"
+        android:name="ir.sajjad.textsaver.fragment.AddTextFragment"
+        android:label="fragment_add_text"
+        tools:layout="@layout/fragment_add_text" >
         <action
-            android:id="@+id/action_editFragment_to_homeFragment"
+            android:id="@+id/action_addTextFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showTextFragment"
+        android:name="ir.sajjad.textsaver.ShowTextFragment"
+        android:label="fragment_show_text"
+        tools:layout="@layout/fragment_show_text" >
+        <action
+            android:id="@+id/action_showTextFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 
