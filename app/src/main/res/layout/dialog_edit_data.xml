@@ -98,21 +98,23 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
-            android:text="OK"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <Button
             android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CANCEL"
+            android:layout_marginEnd="25dp"
             android:textColor="@color/white"
             android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   OK   "
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
 
     </LinearLayout>
 
