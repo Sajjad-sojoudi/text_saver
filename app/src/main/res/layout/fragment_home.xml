@@ -24,11 +24,17 @@
 
       <com.google.android.material.floatingactionbutton.FloatingActionButton
           android:id="@+id/fabAdd"
-          android:backgroundTint="@color/red"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginEnd="24dp"
           android:layout_marginBottom="32dp"
+          android:backgroundTint="@color/red"
+          android:src="@drawable/ic_add_note"
+          app:tint="@null"
+          app:fabSize="auto"
+          android:foregroundGravity="center"
+          app:maxImageSize="32dp"
+          android:tint="@color/white"
           app:elevation="6dp"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"

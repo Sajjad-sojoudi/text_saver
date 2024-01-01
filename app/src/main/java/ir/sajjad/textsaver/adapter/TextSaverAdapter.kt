@@ -13,34 +13,42 @@ import ir.sajjad.textsaver.R
 import ir.sajjad.textsaver.data.ItemTextPost
 import java.text.FieldPosition
 
-class TextSaverAdapter(private val data: ArrayList<ItemTextPost>, private val textEvent: TextEvent) : RecyclerView.Adapter<TextSaverAdapter.TextSaverViewHolder>() {
+class TextSaverAdapter(
+    private val data: ArrayList<ItemTextPost>,
+    private val textEvent: TextEvent,
+) : RecyclerView.Adapter<TextSaverAdapter.TextSaverViewHolder>() {
 
-    inner class TextSaverViewHolder(itemView: View , private val context: Context):RecyclerView.ViewHolder(itemView){
+    inner class TextSaverViewHolder(itemView: View, private val context: Context) :
+        RecyclerView.ViewHolder(itemView) {
         val txtTitle = itemView.findViewById<TextView>(R.id.txt_title)
         val txtDetails = itemView.findViewById<TextView>(R.id.txt_details)
 
-        fun bindData(position: Int){
-            txtTitle.text = data[position].txtTitle
-            txtDetails.text = data[position].txtDetails
+        fun bindData(position: Int) {
+            if (position >= 0 && position < data.size) {
+                val currentItem = data[position]
 
-            itemView.setOnClickListener {
-                textEvent.onTextClicked()
-            }
+                txtTitle.text = currentItem.txtTitle
+                txtDetails.text = currentItem.txtDetails
 
-            itemView.setOnLongClickListener{
-                textEvent.onTextLongClicked(data[position],adapterPosition)
-                true
+                itemView.setOnClickListener {
+                    textEvent.onTextClicked(currentItem)
+                }
+
+                itemView.setOnLongClickListener {
+                    textEvent.onTextLongClicked(currentItem, adapterPosition)
+                    true
+                }
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextSaverViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_text,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_text, parent, false)
         return TextSaverViewHolder(view, parent.context)
     }
 
     override fun getItemCount(): Int {
-       return data.size
+        return data.size
     }
 
     override fun onBindViewHolder(holder: TextSaverViewHolder, position: Int) {
@@ -54,15 +62,17 @@ class TextSaverAdapter(private val data: ArrayList<ItemTextPost>, private val te
 
     }
 
-    fun removeData(oldData : ItemTextPost , oldPosition : Int){
+    fun removeData(oldData: ItemTextPost, oldPosition: Int) {
         data.remove(oldData)
         notifyItemRemoved(oldPosition)
     }
 
-    interface TextEvent{
-        fun onTextClicked()
-        fun onTextLongClicked(textPost: ItemTextPost,pos : Int)
+    interface TextEvent {
+        fun onTextClicked(showTextPost :ItemTextPost)
+        fun onTextLongClicked(textPost: ItemTextPost, pos: Int)
     }
+
+
 
 }
 

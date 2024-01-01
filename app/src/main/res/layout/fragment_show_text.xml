@@ -3,11 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.AddTextFragment">
-
-    <!-- res/layout/fragment_add_text.xml -->
+    tools:context=".fragment.ShowTextFragment">
 
     <RelativeLayout
+        android:textDirection="rtl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
@@ -17,37 +16,34 @@
             android:textStyle="bold"
             android:textSize="30sp"
             android:background="@null"
-            android:id="@+id/edtTitle"
+            android:id="@+id/editTextSubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="عنوان"
-            android:inputType="text"
-            android:layout_marginBottom="8dp"/>
+            android:hint="موضوع"
+            android:layout_marginBottom="16dp"/>
 
         <EditText
+            android:layout_marginTop="30dp"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:background="@null"
-            android:id="@+id/edtDetails"
+            android:id="@+id/editTextDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="توضیحات"
-            android:inputType="textMultiLine"
-            android:layout_below="@id/edtTitle"
-            android:layout_marginTop="30dp"
+            android:layout_below="@id/editTextSubject"
             android:layout_marginBottom="16dp"/>
 
         <Button
             android:textSize="18sp"
             android:textColor="@color/white"
-            android:id="@+id/btnAddText"
+            android:id="@+id/btnEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ذخیره"
-            android:layout_below="@id/edtDetails"
-            android:layout_marginTop="16dp"/>
+            android:layout_below="@id/editTextDetail"
+            android:text="برگشت"
+            android:layout_gravity="center"/>
 
     </RelativeLayout>
-
 
 </FrameLayout>

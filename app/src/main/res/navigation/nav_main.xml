@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/showTextFragment"
-        android:name="ir.sajjad.textsaver.ShowTextFragment"
+        android:name="ir.sajjad.textsaver.fragment.ShowTextFragment"
         android:label="fragment_show_text"
         tools:layout="@layout/fragment_show_text" >
         <action

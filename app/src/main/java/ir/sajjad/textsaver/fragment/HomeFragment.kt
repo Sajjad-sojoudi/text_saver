@@ -38,23 +38,30 @@ class HomeFragment : Fragment(),TextSaverAdapter.TextEvent {
             transaction.commit()
         }
 
-        // ایجاد آداپتور
         adapter = TextSaverAdapter(arrayListOf(),this)
 
-        // تنظیم آداپتور برای RecyclerView
         binding.recyclerMain.adapter = adapter
         binding.recyclerMain.layoutManager = LinearLayoutManager(requireContext())
 
-        // دریافت لیست از SharedPreferences
         val textPostList = getTextPostListFromSharedPreferences(requireContext())
 
-        // اگر لیست اطلاعات موجود بود، آن‌ها را به RecyclerView اضافه کنید
         if (textPostList.isNotEmpty()) {
             for (item in textPostList) {
                 adapter.setData(item)
+                binding.recyclerMain.scrollToPosition(0)
             }
-            binding.recyclerMain.scrollToPosition(0)
+
         }
+
+        val sharedPreferencesFileName = "text_posts"
+        val sharedPreferences = requireContext().getSharedPreferences(sharedPreferencesFileName, Context.MODE_PRIVATE)
+
+        val txtSubject = sharedPreferences.getString("subject", "")
+        val txtDetail = sharedPreferences.getString("detail", "")
+
+        // نمایش اطلاعات در HomeFragment
+
+
 
 
     }
@@ -67,14 +74,41 @@ class HomeFragment : Fragment(),TextSaverAdapter.TextEvent {
         binding.recyclerMain.scrollToPosition(0)
 
         return textPostSet?.map {
+            binding.recyclerMain.scrollToPosition(0)
             val parts = it.split(" - ")
             ItemTextPost(parts[0], parts[1])
         } ?: emptyList()
 
     }
 
-    override fun onTextClicked() {
-        Toast.makeText(context, "clicked on text", Toast.LENGTH_SHORT).show()
+    override fun onTextClicked(showTextPost: ItemTextPost) {
+        // گرفتن مقادیر txtSubject و txtDetail
+        val txtSubject = showTextPost.txtTitle
+        val txtDetail = showTextPost.txtDetails
+
+        // ذخیره مقادیر در SharedPreferences
+        saveTextToSharedPreferences(txtSubject, txtDetail)
+
+        // ایجاد Bundle برای انتقال اطلاعات به ShowTextFragment
+        val bundle = Bundle().apply {
+            putString("subject", txtSubject)
+            putString("detail", txtDetail)
+        }
+
+        // انتقال به ShowTextFragment با استفاده از Bundle
+        findNavController().navigate(R.id.action_homeFragment_to_showTextFragment, bundle)
+    }
+
+    private val sharedPreferencesFileName = "text_posts"
+
+    private fun saveTextToSharedPreferences(txtSubject: String, txtDetail: String) {
+        val sharedPreferences = context?.getSharedPreferences(sharedPreferencesFileName, Context.MODE_PRIVATE)
+
+        sharedPreferences?.edit()?.apply {
+            putString("subject", txtSubject)
+            putString("detail", txtDetail)
+            apply()
+        }
     }
 
     override fun onTextLongClicked(textPost: ItemTextPost, pos: Int) {
@@ -89,11 +123,9 @@ class HomeFragment : Fragment(),TextSaverAdapter.TextEvent {
         }
 
         dialogDeleteBinding.btnYes.setOnClickListener {
-            // حذف آیتم از لیست در Adapter
             dialog.dismiss()
             adapter.removeData(textPost, pos)
 
-            // حذف آیتم از SharedPreferences
             removeFromSharedPreferences(textPost)
 
 
@@ -101,21 +133,15 @@ class HomeFragment : Fragment(),TextSaverAdapter.TextEvent {
     }
 
     private fun removeFromSharedPreferences(item: ItemTextPost) {
-        val sharedPreferencesFileName = "text_posts"
         val sharedPreferences = context?.getSharedPreferences(sharedPreferencesFileName, Context.MODE_PRIVATE)
 
-        // دریافت لیست از SharedPreferences
-        val textPostSet = sharedPreferences?.getStringSet("text_posts", emptySet())
+        val textPostSet = sharedPreferences?.getStringSet("text_posts", emptySet())?.toMutableSet()
 
-        // اگر لیست اطلاعات موجود بود، آن‌ها را به ArrayList تبدیل کنید
-        val textPostList = textPostSet?.toMutableList() ?: mutableListOf()
+        textPostSet?.remove("${item.txtTitle} - ${item.txtDetails}")
 
-        // حذف آیتم مورد نظر
-        textPostList.remove("${item.txtTitle} - ${item.txtDetails}")
-
-        // ذخیره لیست جدید در SharedPreferences
-        sharedPreferences?.edit()?.putStringSet("text_posts", textPostList.toSet())?.apply()
+        sharedPreferences?.edit()?.putStringSet("text_posts", textPostSet)?.apply()
     }
+
 
 
 
